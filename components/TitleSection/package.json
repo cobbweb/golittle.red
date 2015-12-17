@@ -1,0 +1,5 @@
+{
+  "name": "TitleSection",
+  "main": "./TitleSection.js",
+  "private": true
+}

@@ -5,7 +5,7 @@
  */
 
 export default {
-  title: 'React Static Boilerplate',
-  description: 'Static website generator for React.js web applications.',
+  title: 'Go Little Red',
+  description: 'Full-time in an offroad camper trailer, enjoying what Australia has to offer.',
   googleAnalyticsId: 'UA-XXXXX-X',
 };

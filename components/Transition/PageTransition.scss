@@ -1,0 +1,31 @@
+$transition: opacity 400ms ease-in-out;
+
+.WillTransition {
+  /* transform: translateZ(0);*/
+}
+
+.Route-enter {
+  opacity: 0.01;
+}
+
+.Route-enter-active {
+  opacity: 1;
+  transition: $transition;
+}
+
+.Route-leave {
+  opacity: 1;
+}
+
+.Route-leave-active {
+  opacity: 0.01;
+  transition: $transition;
+}
+
+/* Don't conflict with StortListItemTransition */
+#app.app__hideContent {
+  .Route-enter, .Route-leave {
+    opacity: 1;
+    transition: none;
+  }
+}

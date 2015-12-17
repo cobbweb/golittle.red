@@ -27,11 +27,15 @@ const JS_LOADER = {
     path.resolve(__dirname, '../components'),
     path.resolve(__dirname, '../core'),
     path.resolve(__dirname, '../pages'),
+    path.resolve(__dirname, '../stories'),
     path.resolve(__dirname, '../app.js'),
     path.resolve(__dirname, '../config.js'),
+    path.resolve(__dirname, '../node_modules/react-image-blur'),
   ],
   loader: 'babel-loader',
 };
+
+console.log(path.resolve(__dirname, '../node_modules/react-image-blur'));
 
 
 // Base configuration
@@ -61,6 +65,9 @@ const config = {
       '__DEV__': DEBUG,
     }),
   ],
+  resolve: {
+    extensions: ['', '.js', '.jsx'],
+  },
   module: {
     loaders: [
       {
@@ -88,6 +95,7 @@ const config = {
       require('autoprefixer')({
         browsers: AUTOPREFIXER_BROWSERS,
       }),
+      require('postcss-calc')(),
     ];
   },
 };

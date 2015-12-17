@@ -6,14 +6,20 @@
 
 import React, { Component } from 'react';
 
+import '../components/Pages/Pages.scss';
+import StoryList from '../components/Story/StoryList';
+import getStories from '../core/getStories';
+import Intro from '../components/Intro';
+
 export default class extends Component {
 
   render() {
+    const stories = getStories();
     return (
-      <div>
-        <h1>Home Page</h1>
-        <p>Coming soon.</p>
-      </div>
+      <main className="Page">
+        <Intro />
+        <StoryList stories={stories} />
+      </main>
     );
   }
 

@@ -1,0 +1,5 @@
+{
+  "name": "TextSection",
+  "main": "./TextSection.js",
+  "private": true
+}

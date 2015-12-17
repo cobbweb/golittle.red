@@ -1,0 +1,5 @@
+{
+  "name": "TextOverImageSection",
+  "main": "./TextOverImageSection.js",
+  "private": true
+}

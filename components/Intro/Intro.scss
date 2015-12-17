@@ -1,0 +1,13 @@
+@import '../variables.scss';
+
+.Intro {
+  margin: 1.4rem auto 1.6rem;
+  text-align: center;
+  font-size: 1.2rem;
+  font-style: italic;
+  font-family: $font-family-alternative;
+
+  &:before, &:after {
+    content: ' \2014 ';
+  }
+}

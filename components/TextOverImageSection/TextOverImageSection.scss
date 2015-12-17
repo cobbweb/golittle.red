@@ -1,0 +1,49 @@
+.TextOverImageSection {
+  position: relative;
+  width: 100%;
+  height: 66vh;
+}
+
+.TextOverImageSectionTitle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.TextOverImageSectionTitle__yAlign {
+  &-top {}
+
+  &-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+}
+
+.TextOverImageSectionTitle__xAlign {
+  &-left {
+    text-align: left;
+  }
+
+  &-center {
+    text-align: center;
+  }
+
+  &-right {
+    text-align: right;
+  }
+}
+
+.TextOverImageSectionTitle--text {
+  padding: 0 1rem;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}

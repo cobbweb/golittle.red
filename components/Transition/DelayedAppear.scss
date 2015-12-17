@@ -1,0 +1,11 @@
+#app .DelayedAppear {
+  opacity: 1;
+  right: 0;
+  transition: opacity, right, 0.5s ease-in-out;
+  transition-delay: 0.8s;
+}
+
+#app.app__hideContent .DelayedAppear {
+  opacity: 0;
+  right: -30px;
+}

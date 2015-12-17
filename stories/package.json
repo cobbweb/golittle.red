@@ -1,0 +1,5 @@
+{
+  "name": "stories",
+  "main": "./stories.js",
+  "private": true
+}

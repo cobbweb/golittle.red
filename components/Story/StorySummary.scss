@@ -1,0 +1,27 @@
+@import './BackgroundImage.scss';
+
+.StorySummary {
+  padding: 1.4rem 1rem;
+  overflow: hidden;
+  color: #fff;
+  background-color: #333;
+  border-radius: 5px;
+}
+
+.StorySummary *:not(.BackgroundImage) {
+  z-index: calc($BackgroundImage-zIndex + 1);
+}
+
+.StorySummary-title {
+  margin-top: 0;
+  font-size: 1.4rem;
+  font-family: 'futura-pt';
+}
+
+.StorySummary-description {
+  font-size: 1rem;
+}
+
+.StorySummary-date {
+  font-size: 0.8rem;
+}

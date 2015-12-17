@@ -1,0 +1,35 @@
+@import '../variables.scss';
+@import '../Story/BackgroundImage.scss';
+
+.HeaderBig {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  padding-top: 100px;
+  color: #fff;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0px -3px 10px -1px rgba(0,0,0,0.75);
+}
+
+.HeaderBig-text {
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.HeaderBig-title {
+  display: inline-block;
+  margin: 0 auto;
+  font-size: 3.3rem;
+  /* faux-underline */
+  border-bottom: 1px solid white;
+}
+
+.HeaderBig-subtitle {
+  font-family: $font-family-alternative;
+  font-weight: 300;
+  font-size: 1.3rem;
+}
+
+.HeaderBig * {
+  z-index: 3;
+}

@@ -1,0 +1,38 @@
+@import '../Story/BackgroundImage.scss';
+
+$padding: 1rem;
+
+.TitleSection {
+  z-index: 4;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  height: 60vh;
+  padding: $padding;
+  color: white;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.TitleSection *:not(.BackgroundImage) {
+  z-index: calc($BackgroundImage-zIndex + 1);
+}
+
+.TitleText {
+  top: -$padding;
+}
+
+.Title {
+  font-size: 1.8rem;
+}
+
+.Subtitle {
+  font-size: 1.2rem;
+}
+
+.Details {
+  position: absolute;
+  display: block;
+  bottom: $padding;
+  left: $padding;
+  font-size: 0.8rem;
+}

@@ -18,8 +18,13 @@ export default async () => {
   await require('./build')();
 
   browserSync({
+    // don't open site in browser after starting
+    open: false,
+
     server: {
       baseDir: 'build',
+
+      reloadOnRestart: true,
 
       middleware: [
         hygienistMiddleware('build'),

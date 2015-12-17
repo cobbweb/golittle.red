@@ -1,0 +1,5 @@
+{
+  "name": "BlurImage",
+  "main": "./BlurImage.js",
+  "private": true
+}

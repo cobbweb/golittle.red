@@ -12,26 +12,37 @@ html, body {
   background-color: $body-bg;
   color: $text-color;
   font-family: $font-family-base;
+  font-size: 18px;
+}
+
+* {
+  position: relative;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+h1, h2, h3 {
+  font-family: $font-family-heading;
+  font-weight: 500;
 }
 
 .Layout {
   margin: 0 auto;
 }
 
-@media (min-width: $screen-sm-min) {
-  .Layout {
-    width: calc($screen-sm-min - 18px);
-  }
+#app {
+  z-index: 3;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
 }
 
-@media (min-width: $screen-md-min) {
-  .Layout {
-    width: calc($screen-md-min - 22px);
-  }
-}
-
-@media (min-width: $screen-lg-min) {
-  .Layout {
-    width: calc($screen-lg-min - 30px);
-  }
+#app.app__hideContent {
+  opacity: 0;
 }

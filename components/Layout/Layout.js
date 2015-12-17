@@ -6,12 +6,12 @@
 
 import React, { PropTypes } from 'react';
 import './Layout.scss';
-import Navigation from '../Navigation';
+import HeaderBig from '../Header/HeaderBig';
 
 function Layout({ children }) {
   return (
-    <div className="Layout">
-      <Navigation />
+    <div className="Layout WillTransition">
+      <HeaderBig />
       {children}
     </div>
   );

@@ -12,6 +12,8 @@ import Html from '../components/Html';
 import task from './lib/task';
 import fs from './lib/fs';
 
+import stories from '../stories';
+
 const DEBUG = !process.argv.includes('release');
 
 function getPages() {
@@ -40,15 +42,35 @@ async function renderPage(page, component) {
     body: ReactDOM.renderToString(component),
   };
   const file = join(__dirname, '../build', page.file.substr(0, page.file.lastIndexOf('.')) + '.html');
+  const file2 = join(__dirname, '../build', page.file.substr(0, page.file.lastIndexOf('.')) + '/index.html');
   const html = '<!doctype html>\n' + ReactDOM.renderToStaticMarkup(<Html debug={DEBUG} {...data} />);
   await fs.mkdir(dirname(file));
+  await fs.mkdir(dirname(file2));
   await fs.writeFile(file, html);
+  await fs.writeFile(file2, html);
+}
+
+async function renderStory(storySlug, component) {
+  const data = {
+    body: ReactDOM.renderToString(component)
+  };
+  const file = join(__dirname, '../build', 'story', storySlug + '.html');
+  const file2 = join(__dirname, '../build', 'story', storySlug + '/index.html');
+  const html = '<!doctype html>\n' + React.renderToStaticMarkup(<Html debug={DEBUG} {...data} />);
+  await fs.mkdir(dirname(file));
+  await fs.mkdir(dirname(file2));
+  await fs.writeFile(file, html);
+  await fs.writeFile(file2, html);
 }
 
 export default task(async function render() {
   const pages = await getPages();
-  const { route } = require('../build/app.node');
+  const { route, storyRoute } = require('../build/app.node');
   for (const page of pages) {
     await route(page.path, renderPage.bind(undefined, page));
+  }
+
+  for (const storySlug of stories) {
+    await storyRoute(`/story/${storySlug}`, renderStory.bind(undefined, storySlug));
   }
 });
